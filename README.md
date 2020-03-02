@@ -19,7 +19,7 @@ Meistens wird man auf Linux mit der Konsole arbeiten müssen. Da ist es gut wenn
 
 * touch	-->	Zugriffs- und Änderungs-Zeitstempel von Dateien ändern
 
-Mit diesen Befehlen kann man in Linux arbeiten. Weitre Infos zu Befehlen sind unter [Ubuntu Users](https://ubuntuusers.de/) zu finden.
+Mit diesen Befehlen kann man in Linux arbeiten. Weitre Infos zu Befehlen sind unter [Ubuntu Users](https://ubuntuusers.de/) zu finden...
 
 ---
 

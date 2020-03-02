@@ -38,11 +38,13 @@ Der Hypervisor auch Virtual Machine Monitor (VMM) genannt, ist ein Vermittler zw
 
 #### Hypervisor Typ1
 Der Hypervisor Typ1 setzt gleich auf der Hardware auf. Er ist das OS wie zum Beispiel ESX von VMware. Auf ihm laufen die VMs und man kann sie dann mit einem Konfigurationstool managen.
+
 ![Hypervisor Typ1](https://upload.wikimedia.org/wikipedia/commons/5/53/VMM-Type1.JPG) 
 
 
 #### Hypervisor Typ2
 Beim Hypervisor Typ 2 lauft eine Applikation auf einem OS, welche für die VMs zuständig ist. Hier wäre die VMware Workstation gemeint. Man kann diese Applikation auf Windows installieren, und über die Applikation die VMs erstellen, konfigurieren, etc…
+
 ![Hypervisor Typ1](https://upload.wikimedia.org/wikipedia/commons/1/1a/VMM-Type2.JPG)
 
 
@@ -95,6 +97,21 @@ Git bietet aber noch viel mehr, welche Eigenschaften es anderen Systemen überle
 
 ## Mark Down
 
+
 ---
 
 ## Systemsicherheit
+Die Systemsicherheit ist ein wichtiger Bestandteil in der Informarik. Dies gilt auch für meine Umgebung. Ich werde im folgenden auf die Firewall und den Reverse Proxy genauer eingehen.
+
+### Firewall
+Die Firewall trennt das Netzwerk von anderen Netzwerken und bestimmt die Kommunikationswege. Sie entscheidet, ob ein Paket aus dem Netzwerk oder in das Netzwerk kommen kann. Anhand der Source, Destination, Port und Protokoll kann sie das umsetzen.
+
+Man kann der Firewall auch gewisse Regeln zuweisen. Hier kommt die Konfiguration ins Spiel. Falls ein Proxy in die Firewall eingebaut ist, kann man ein Paketfilter einbauen. Viele Firewalls haben auch einen Stateful Packet Inspection (SPI) integriert. Dies ist eine Dynamische Paketfilterung (Layer 3) nach Verbindungszustand. Sämtliche Pakete ohne Verbindung werden verworfen. 
+
+Folgende Firewall Typen gibt es auch noch:
+* Application Layer Firewall (ALF) Layer 7 – Firewall: Filterung nach Daten-Inhalt → Proxy
+
+* Personal Firewall Software Firewall, welche auf dem Host lokal die Kommunikation nach Regeln zulässt oder nicht (z.B. Windows Firewall, Comodo Firewall, Avira, Kaspersky ect. )
+
+### Reverse Proxy
+

@@ -1,5 +1,6 @@
 # M300 Dokumentation
 ## Linux
+![Tux](https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png)
 ---
 ### Theorie
 Linux ist ein Kernel, welcher für andere Betriebssystemen zu Verfügung gestellt wird. Man kann den Kernel erweitern und optimieren, weil das ganze Open Source ist.
@@ -52,21 +53,43 @@ Beim Hypervisor Typ 2 lauft eine Applikation auf einem OS, welche für die VMs z
 ## Vagrant
 Vagrant ist ein Programm, welches effizient Virtuelle Maschinene erstellen kann. Anhand von einem Vagrantfile lassen sich Konfigurationen an den VMs und Informationen für die Hypervisoren anpassen. Mit den Commands, kann man dann die VMs steuern (starten, herunterfahren, lsöchen usw..)
 
-Mehr Informationen sind unter [Vagrant](https://www.vagrantup.com/) zu finden.
+Mehr Informationen sind unter folgendem Link zu finde.[Vagrant](https://www.vagrantup.com/) 
 
 Hier sind einige wichtige Befehle, welche man kennen sollte, wenn man Vagrant braucht:
 
-* vagrant Init --> Erstellt VM
-* vagrant up --> Startet VM
-* vagrant ssh --> Verbindet sich per SSH zur VM
-* vagrant status Zeigt Status der VM an
-* vagrant port --> Zeigt weitergeleitete Ports der VM an.
-* vagrant halt --> stoppt die VM
-* vagrant destroy --> Zerstört / löscht die VM
+> <"vagrant Init">  -->    #Erstellt VM
+
+> <"vagrant up">    -->    #Startet VM
+
+> <"vagrant ssh">   -->    #Verbindet sich per SSH zur VM
+
+> <"vagrant status"> -->   #Zeigt Status der VM an
+
+> <"vagrant port">  -->    #Zeigt weitergeleitete Ports der VM an
+
+> <"vagrant halt">  -->    #stoppt die VM
+
+> <"vagrant destroy"> -->  #Zerstört / löscht die VM
 
 ---
 
 ## Git 
+Git wurde von Linus Torvalds entwickelt und ist ein Versionorientiertes Programm. Es ermöglicht mehreren Benutzern gleichzeitig, eine Datei zu bearbeiten, ohne dass man sich Probleme macht, indem man Elemente der Datei überschreibt.
+
+![](/Images/git-concept.jpg) 
+
+Dadurch ergeben sich am Repo für Bearbeiter folgende Möglichkeiten:
+
+* Die eigene Arbeit kann einfach wieder in die zentrale Basis integriert werden.
+
+* Es kann zeitgleich weiterentwickelt werden, z.B. jeder an verschiedenen Features.
+
+* Die Versionierung verhindert, dass bereits getätigte Arbeiten verloren gehen bzw. überschrieben werden.
+
+* Bei Bedarf kann zu früheren Versionen zurückgekehrt werden oder simultan an verschiedenen Versionen gearbeitet werden (auch "Branches" genannt).
+
+Git bietet aber noch viel mehr, welche Eigenschaften es anderen Systemen überlegen macht kann
+
 
 ---
 

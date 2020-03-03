@@ -96,7 +96,7 @@ Git bietet aber noch viel mehr, welche Eigenschaften es anderen Systemen überle
 ---
 
 ## Mark Down
-
+Markdown ist eine vereinfachte aufzeichnungssprache. Das Ziel ist es ein Format zu erstellen, dass man es ohne konvertierung lesen kann. 2004 wurde es entworfen. Diese Dokumentation wurde mit Markdown geschrieben. Man kann Markdown auf jedem Texteditor nutzen. 
 
 ---
 
@@ -114,4 +114,16 @@ Folgende Firewall Typen gibt es auch noch:
 * Personal Firewall Software Firewall, welche auf dem Host lokal die Kommunikation nach Regeln zulässt oder nicht (z.B. Windows Firewall, Comodo Firewall, Avira, Kaspersky ect. )
 
 ### Reverse Proxy
+Der Reverseproxy ist ein Proxy, welcher Resourcen für einen Client von einem Servern holt. Es handelt sich um eine Kommunikationsschnittstelle im Netzwerk, die Anfragen entgegennimmt und stellvertretend an einen Zielrechner weiterleitet.
 
+Ein Reverse Proxy-Server wird als zusätzliche Sicherheitskomponente vor einen oder mehrere Webserver geschaltet, um Anfragen aus dem Internet stellvertretend entgegenzunehmen und an einen Backend-Server im Hintergrund weiterzuleiten.
+
+![](/Images/Sicherheit/Reverse_Proxy.JPG) 
+
+## Projekt Vagrant
+
+## Projekt Systemsicherheit
+
+## Vergleich Vorwissen & Wissenszuwachs
+
+## Reflexion

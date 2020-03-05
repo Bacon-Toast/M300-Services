@@ -131,7 +131,7 @@ Als erstes muss man den Ordner erstellen, in welchem man arbeiten möchte. Hier 
 
 #### Schritt 2
 Sobald man sich im richtigen Ordner befindet muss man die VM erstellen. Dies ist mit folgendem Befehl zu machen:
-> vagrant Init 
+> vagrant init ubuntu/trusty64
 
 Danach wird das Vagrantfile erstellt, auf welchem man alle Konfigurationen machen kann. Das File ist in fünf Punkten gegliedert:
 
@@ -174,8 +174,11 @@ Zum erstellten Ordner mit der VM vom letzten Projekt navigieren. Dort das Vagran
 #### Schritt 2 
 Wir werden den Bereich config.vm.provison bearbeiten. Hier drin müssen folgende Zeilen eingefügt werden:
 
+## Sicherheitsmassnahmen
+
 
 ---
+
 
 ## Vergleich Vorwissen & Wissenszuwachs
 Zu Beginn kannte ich Virtual Box und setzte damit auch VMs auf. Die Konfiguration dieser einzelnen VMs nehmen viel Zeit in Anspruch. Als dann Vagrant ins Spiel kam, erkannte ich wie viel Zeit man sparen jedoch kann.

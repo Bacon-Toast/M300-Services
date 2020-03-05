@@ -120,10 +120,74 @@ Ein Reverse Proxy-Server wird als zusätzliche Sicherheitskomponente vor einen o
 
 ![](/Images/Sicherheit/Reverse_Proxy.JPG) 
 
+---
+
 ## Projekt Vagrant
+### Einleitung
+In diesem Projekt geht es darum, eine Vagrant VM aufzusetzen. Die Vagrant VM wird dann auf das Vagrantfile zurückgreifen und sämtliche Konfigurationen auslesen, und diese dann auch so umsetzen.
+
+#### Schritt 1
+Als erstes muss man den Ordner erstellen, in welchem man arbeiten möchte. Hier wird dann die Konsole geöffnet und gearbeitet. Wichtig ist, dass man immer auf dem selben Pfad arbeitet, sonst gibt es ein Durcheinander...
+
+#### Schritt 2
+Sobald man sich im richtigen Ordner befindet muss man die VM erstellen. Dies ist mit folgendem Befehl zu machen:
+> vagrant Init 
+
+Danach wird das Vagrantfile erstellt, auf welchem man alle Konfigurationen machen kann. Das File ist in fünf Punkten gegliedert:
+
+* config.vm.box 
+* config.vm.provider
+* config.vm.network
+* config.vm.synced_folder
+* config.vm.provision
+
+1) Der erste Punkt definiert das Betriebssystem.
+2) Der zweite Punkt definiert den Provider (Virtualbox, VMware usw..)
+3) Beim dritten Punkt können sämtliche Netzwerk Konfigurationen gemacht werden (IP Adresse setzen usw..)
+4) Der vierte Punkt sagt aus, wie man auf die Files der VM vom Computer aus zugreifen möchte.
+5) Der fünfte Punkt definiert, was man automatisiert aufsetzen möchte.
+
+#### Schritt 3
+Nach dem man die Konfigurationen vorgenommen hat, kann man die VM starten. Hierzu benötigt man folgenden Command:
+
+> vagrant up
+
+#### Schritt 4 
+Nun ist die VM aktiv. Mit SSH kann man auf sie zugegriffen werden. Hierzu benötigt man den folgenden Befehl:
+
+> vagrant ssh
+
+
+Die VM ist nun bereit und man kann mit ihr arbeiten.
+
+---
+
+
 
 ## Projekt Systemsicherheit
+### Einleitung
+In diesem Projekt geht es darum, dass wir unsere Umgebung mit Sicherheitsaspekten absichern. Dazu gehören Firewalls und Reverse Proxys. Wir werden das Vagrant File so abändern, dass beide Kompnente automatisch mitinstalliert werden.
+
+#### Schritt 1 
+Zum erstellten Ordner mit der VM vom letzten Projekt navigieren. Dort das Vagrantfile in Visual Studio Code öffnen.
+
+#### Schritt 2 
+Wir werden den Bereich config.vm.provison bearbeiten. Hier drin müssen folgende Zeilen eingefügt werden:
+
+
+---
 
 ## Vergleich Vorwissen & Wissenszuwachs
+Zu Beginn kannte ich Virtual Box und setzte damit auch VMs auf. Die Konfiguration dieser einzelnen VMs nehmen viel Zeit in Anspruch. Als dann Vagrant ins Spiel kam, erkannte ich wie viel Zeit man sparen jedoch kann.
+
+Alles was ich bisher in meiner Ausbildung lernte dokumentierte ich auf Word. Es ist meine aller Erste Dokumentation, welche ich mit Markdown und Gitlab zusammen mache. Die Situation war neu für mich. Ich muss sagen, dass mir die Sprache sehr gefällt und dass ich mit beiden noch weiterarbeiten werde.
+
+Vor diesem Modul hatte ich ein Raspberry Pi Modul, in welchem ich mich hart mit Linux befasste. Deshalb kannte ich bereits die Basics (Ordnerstruktur, Befehle usw...). Modul 300 gab mir einen guten Einblick in die Systemsicherheit (Firewall / Reverse proxy). Schliesslich habe ich noch nie damit auf Linux gearbeitet.
+
+---
 
 ## Reflexion
+Die Lernbeurteilung 2 war eine sehr gute Übung für mich. Ich habe sehr viel davon profitiert. Schliesslich habe ich noch nie in einer Github Umgebung gearbeitet. Ich konnte einige wichtige Basics zum Thema Infarstucture lernen. Die Zukunft in der Informatik besteht aus Automatisierung. Dieses Modul zeigt wie einfach man sich das Leben machen kann und wie viel Geld man sparen kann, wenn man diese Methoden in der Arbeitswelt einsetzt.
+Zudem deckte es Themen wie Netzwerksicherheit und Virtualisierung. Diese beiden Themen haben auch eine sehr wichtige Bedeutung in Zukunft. 
+
+---

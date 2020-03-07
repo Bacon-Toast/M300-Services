@@ -126,6 +126,13 @@ Ein Reverse Proxy-Server wird als zusätzliche Sicherheitskomponente vor einen o
 ### Einleitung
 In diesem Projekt geht es darum, eine Vagrant VM aufzusetzen. Die Vagrant VM wird dann auf das Vagrantfile zurückgreifen und sämtliche Konfigurationen auslesen, und diese dann auch so umsetzen.
 
+### Umgebung
+Folgende Umgebung gilt es aufzubauen:
+
+![](/Images/Plan/Visio.JPG)
+
+
+
 #### Schritt 1
 Als erstes muss man den Ordner erstellen, in welchem man arbeiten möchte. Hier wird dann die Konsole geöffnet und gearbeitet. Wichtig ist, dass man immer auf dem selben Pfad arbeitet, sonst gibt es ein Durcheinander...
 
@@ -173,6 +180,9 @@ Zum erstellten Ordner mit der VM vom letzten Projekt navigieren. Dort das Vagran
 
 #### Schritt 2 
 Wir werden den Bereich config.vm.provison bearbeiten. Hier drin müssen folgende Zeilen eingefügt werden:
+
+![](/Images/Sicherheit/Systemsec_config.JPG)
+
 
 ## Sicherheitsmassnahmen
 

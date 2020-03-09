@@ -1,6 +1,26 @@
 # Update Packages
 apt-get update
 
+#Group Add
+groupadd database
+groupadd admin
+
+#User Add
+useradd aragondb
+useradd heliosdb
+
+#Adding User to Group
+usermod -a -G database aragondb
+usermod -a -G database heliosdb
+
+#Groupfolder createion
+mkdir -p /teams/datenbanken
+touch /teams/datenbanken/dbconcept
+
+#Groupfolder permissions
+chmod 077 /teams/datenbanken -R
+chown root:database /teams/datenbanken/ -R
+
 # Basic Linux Stuff
 apt-get install -y git
 

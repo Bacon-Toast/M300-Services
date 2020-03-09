@@ -49,8 +49,8 @@ Vagrant.configure("2") do |config|
 
 
      
-   SHELL
+   #SHELL
    
-  config.vm.provision "shell", path: "VMs/template/template.txt"
+  config.vm.provision "shell", path: "../template/template.sh"
 end
 

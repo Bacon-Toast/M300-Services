@@ -122,6 +122,30 @@ Ein Reverse Proxy-Server wird als zusätzliche Sicherheitskomponente vor einen o
 
 ---
 
+### Benutzer & Rechte
+In Linux gibt es wie auch in Windows User und ihre Zugriffsrechte. Folgende Standartusers sind meistens zu finden:
+
+![](/Images/Linux/users.JPG)
+
+Sämtliche Benutzer sind in der Datei: ~/etc/passwd zu finden. Die Passwörter befinden sich in der Datei ~/etc/shadow.
+
+Das Berechtigungskonzept hat eine Idee dahinter. Jede Berechtigung ist mit einer Zahl versehen.
+
+![](/Images/Linux/berechtigungen.JPG)
+
+Je nach dem wie dann die Berechtigungen erteilt werden addiert man die Nummern. Folgender Command ist zu gebrauchen:
+
+> chmod XXX
+
+x=Zahl aus Tabelle
+
+
+
+
+
+
+---
+
 ## Projekt Vagrant
 ### Einleitung
 In diesem Projekt geht es darum, eine Vagrant VM aufzusetzen. Die Vagrant VM wird dann auf das Vagrantfile zurückgreifen und sämtliche Konfigurationen auslesen, und diese dann auch so umsetzen.

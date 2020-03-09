@@ -209,6 +209,13 @@ Wir werden den Bereich config.vm.provison bearbeiten. Hier drin müssen folgende
 
 
 ## Sicherheitsmassnahmen
+Bei diesem Projekt habe ich mir folgende Sicherheitsmassnahmen überlegt:
+
+* Berechtigungen für Usergruppen auf Ordner
+* Firewall rules eingerichtet
+* Reverse Proxy eingerichtet (Webserverschutz)
+* Benutzer Schulung
+* Netzwerkdokumentation immer nachführen
 
 
 ---

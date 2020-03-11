@@ -220,6 +220,11 @@ Bei diesem Projekt habe ich mir folgende Sicherheitsmassnahmen überlegt:
 
 ---
 
+## Kreativität für LB2
+Ich habe ein Template für die VMs eingerichtet, welches Dienste installiert. Dieses wird zentral in Gihtub gespeichert. Da können alle darauf zugreifen.
+
+---
+
 
 ## Vergleich Vorwissen & Wissenszuwachs
 Zu Beginn kannte ich Virtual Box und setzte damit auch VMs auf. Die Konfiguration dieser einzelnen VMs nehmen viel Zeit in Anspruch. Als dann Vagrant ins Spiel kam, erkannte ich wie viel Zeit man sparen jedoch kann.

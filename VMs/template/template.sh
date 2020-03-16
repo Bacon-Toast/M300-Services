@@ -4,22 +4,31 @@ apt-get update
 #Group Add
 groupadd database
 groupadd admin
+groupadd web
 
 #User Add
-useradd aragondb
-useradd heliosdb
+useradd aragondb -p root
+useradd heliosdb -p root
+useradd alitaweb -p root
 
 #Adding User to Group
 usermod -a -G database aragondb
 usermod -a -G database heliosdb
+usermod -a -G web alitaweb
 
 #Groupfolder createion
 mkdir -p /teams/datenbanken
 touch /teams/datenbanken/dbconcept
 
+mkdir -p /teams/web
+touch /teams/web/webconcept
+
 #Groupfolder permissions
-chmod 077 /teams/datenbanken -R
+chmod 770 /teams/datenbanken -R
 chown root:database /teams/datenbanken/ -R
+
+chmod 770 /teams/web -R
+chown root:web /teams/web/ -R
 
 # Basic Linux Stuff
 apt-get install -y git

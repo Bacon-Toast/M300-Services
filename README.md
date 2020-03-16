@@ -192,6 +192,17 @@ Nun ist die VM aktiv. Mit SSH kann man auf sie zugegriffen werden. Hierzu benöt
 Die VM ist nun bereit und man kann mit ihr arbeiten.
 
 ---
+### Testprotokoll
+| Testfall                      | Check          |
+| --------                      | -------------- |
+| SSH Zugriff                   | positiv        |
+| Programme installiert ?       | positiv        |
+| Berechtigungen stimmen?       | positiv        |
+| User erfolgreich erstellt ?   | positiv        |
+| Firewall rules stimmen?       | positiv        |
+
+
+   ---
 
 
 

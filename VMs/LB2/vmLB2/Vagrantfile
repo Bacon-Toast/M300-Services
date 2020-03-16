@@ -1,0 +1,44 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  # Box Settings
+  config.vm.box = "ubuntu/trusty64"
+  
+  # Provider Settings
+	config.vm.provider "virtualbox" do |vb|
+		vb.memory = 512
+  
+	end
+  
+  # Network Settings
+
+  #config.vm.network "forwarded_port", guest: 80, host: 8080  
+      #guest --> my box host (Local Machine) Port 80 wird für Localhost uaf 8080 definiert.
+
+  # config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+  config.vm.network "private_network", ip: "192.168.33.10"
+  # config.vm.network "public_network"
+
+
+  # Provision Settings
+   config.vm.provision "shell", inline: <<-SHELL
+     
+     sudo apt-get update
+     sudo apt-get install apache2 -y 
+     sudo service apache2 restart
+
+     sudo ufw enable
+     sudo ufw allow 'Apache'
+     
+
+     ufw allow 80/tcp
+     ufw allow from any to any port 22
+     ufw allow out 22/tcp
+     
+
+
+     
+   SHELL
+end

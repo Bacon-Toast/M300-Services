@@ -1,4 +1,4 @@
-# M300 Dokumentation
+# M300 Dokumentation Teil 1
 ## Linux
 ![Tux](https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png)
 ---
@@ -251,3 +251,65 @@ Die Lernbeurteilung 2 war eine sehr gute Übung für mich. Ich habe sehr viel da
 Zudem deckte es Themen wie Netzwerksicherheit und Virtualisierung. Diese beiden Themen haben auch eine sehr wichtige Bedeutung in Zukunft. 
 
 ---
+
+# Modul 300 Dokumentation Teil 2
+## Containerisierung
+Bei der Containerisierung handelt es sich um eine Art Virtualisierung auf Anwendungsebene, bei der mehrere isolierte Maschinen auf einem einzelnen Kernel ausgeführt werden können. Diese Maschinen werden Container genannt.
+
+Container bieten eine Standardmethode um Anwendungscode, Laufzeitumgebung, Systemwerkzeugen, Systembibliotheken und Konfigurationen in einer Maschine zusammenzufassen. Im Gegensatz zu VMS, die alle ihren eigenen "Kernel" haben, teilen sich Container einen Kernel (Betriebssystem), der auf der Hardware installiert ist.
+
+Folgendes Bild zeigt den Unterschied zwischen Container und Virtuellen Maschinen:
+
+![](/Images/Container/difference.JPG)
+
+Die Vorteile der Containerisierung sind:
+
+* Resourcenbedarf (weniger Resourcen als VMs)
+  
+* Effizient (Container nutzen Serverresourcen sehr dynamisch  aus )
+  
+* Performance (Container haben bringen mehr Leistung, als VMs, weil das Gastbetriebssystem auch seine eigenen Speicheranforderungen erfüllen und wertvollen Arbeitsspeicher des Hosts belegen muss)
+
+---
+
+## Docker
+### Erklärung
+![](https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg)
+
+Docker ist eine Software zur Isolierung von Anwendungen mit Containervirtualisierung. Die Software benötigt keine Lizenzen.
+
+Docker nahm damals die bestehende Linux-Containertechnologie auf und verpackte und erweiterte sie in vielerlei Hinsicht – vor allem durch portable Images und eine benutzerfreundliche Schnittstelle.
+
+### Architektur
+Im Folgenden sind alle Elemnte und ihre Aufgaben aufgelistet:
+
+#### Docker Deamon 
+* Erstellen, Ausführen und Überwachen der Container
+* Bauen und Speichern von Images.
+
+#### Docker Client
+
+* Docker wird über die Kommandozeile (CLI) mittels des Docker Clients bedient
+* Kommuniziert per HTTP REST mit dem Docker Daemon
+
+#### Images
+* Images sind gebuildete Umgebungen welche als Container gestartet werden können
+* Images sind nicht veränderbar, sondern können nur neu gebuildet werden.
+* Images bestehen aus Namen und Version (TAG), z.B. ubuntu:16.04. 
+
+#### Container
+* Container sind die ausgeführten Images
+* Ein Image kann beliebig oft als Container ausgeführt werden
+* Container bzw. deren Inhalte können verändert werden, dazu werden sogenannte Union File Systems verwendet, welche nur die Änderungen zum original Image speichern.
+
+#### Docker Registry 
+* In Docker Registries werden Images abgelegt und verteilt
+
+## Microservices
+Microservices sind ein Architekturkonzept der Anwendungsentwicklung. 
+Ein Microservice ist also eine Kernfunktion einer Anwendung und er wird unabhängig von anderen Services ausgeführt. 
+
+Jede Funktion kann unabhängig entwickelt und implementiert werden.
+
+Folgende Grafik zeigt der Aufbau von Microservices auf:
+![](/Images/Container/microservice.JPG)

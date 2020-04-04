@@ -313,3 +313,133 @@ Jede Funktion kann unabhängig entwickelt und implementiert werden.
 
 Folgende Grafik zeigt der Aufbau von Microservices auf:
 ![](/Images/Container/microservice.JPG)
+
+## Docker Projekt Container
+### Einleitung
+
+In diesem Projekt geht es darum, Docker besser kennen zu lernen. Ich werde Container erstellen, diese Kombinieren und managen. Ausserdem werde ich noch mit Images Arbeiten.
+
+### Umgebung
+So wird meine Umgebung am Schluss des Moduls etwa aussehen:
+
+![](/Images/Plan/Visio-docker.JPG)
+
+### Docker download
+Als Erstes geht es darum Docker zu installieren. Ich arbeite auf einer Ubuntu VM.
+
+Hierzu habe ich die Anleitung von Docker [Docker Anleitung Download](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+
+Nach der Installation kann man die Funktionsfähigkeit von Docker mit dem folgenden Command testen:
+
+> run 'Hello-world'
+
+![](/Images/docker/holamundo.JPG)
+
+Falls dieses Bild erscheint kann man mit den Container & Images fortfahren.
+
+### Docker Container & Images
+Ein Container beinhaltet Services, ohne dass man diese installieren. Das Konzept dahinter basiert auf Dockerfiles. Mit diesen kann man Images erstellen.
+
+Images kann man auch von Dockerhub herunterladen. Jedoch muss man sich dort einlogen.
+
+Ich werde im folgenden mit den Apache und mysql Images arbeiten.
+
+Apache werde ich als Backend installieren und mysql als frontend.
+
+![](/Images/docker/docker-container.JPG)
+
+Mit folgenden Command lässt sich der Apache Container installieren: 
+
+> docker container run -d -p 8081:80 --name MyApache httpd
+
+
+> docker container run -it -p 8082:80 mysql 
+
+Nun sind die Container installiert und laufen. Für den Test kann man im Browser: http://localhost:(port) eingeben. Wenn die Webserver ersichtlich sind dann hat es geklappt.
+
+Beim erstellen eines Containers, für welches ein neues Image gebraucht wird, beziehungsweise ein Image benötigt wird, welches nicht lokal vorhanden ist, wird ein Pull Request von docker hub ausgeführt, damit es lokal downgeloaded ist.
+
+![](/Images/docker/pull-image.JPG)
+
+Hier sind noch weitere Docker commands:
+
+Alle laufende Container anzeigen:
+> docker ps
+
+Alle Container anzeigen
+> docker container ls -a
+
+Alle Images anzeigen
+> docker images
+
+Image herunterladen
+> pull (Imagename)
+
+Image erstellen
+> docker image build -t
+
+Container stoppen
+> docker container stop [ID]
+
+den Container "betreten"
+> docker container exec -it "containername" bash
+
+## Image erstellen 
+Man kann auch Images erstellen. Für das habe ich ein bestehendes Image genommen (nginx) und habe darauf meine Webseite gemacht. Das Image habe ich im Anschluss auf Dockerhub gepushed.
+
+Als erstes erstellt man den Container mit dem Image und mapped den Ordner im Image drin, welchen man bearbeiten will in einen Ordner auf dem Hostsystem:
+> docker container run -d -p 8080:80 nginx -v $(pwd):/usr/share/nginx/html --name nginx-website-m300 nginx
+
+Ich habe mir einen Test Ordner erstellt, welchen ich gemappt habe. Im Command ist das "$(pwd)" zu finden, und das ist dafür da, dass dieser Ordner in dem man sich gerade befindet, gemeint ist. 
+
+Im Testordner habe ich nun ein index.html file erstellt, welches das Original überschreibt. Diese Änderungen geschehen allem im Container.
+
+![](/Images/docker/docker-testdir.JPG)
+
+Hier kann man nun ein Image erstellen. Dies ist mit dem Docker File zu machen. Hierzu habe ich in der SELBEN Direcotory ein Dockerfile erstellt.
+
+![](/Images/docker/docker-file.JPG)
+
+Im Dockerfile habe ich definiert, mit welchem Image ich arbeite, wo meine Workdirectory ist und, dass das Image alle Inhalte von der Workdirectory in mein Image kopieren soll.
+
+Als nächstes geht es darum, das Image zu "bauen". Dies macht man mit folgendem Command:
+> docker image build -t seanm300/nginx-website-m300 . 
+
+Docker image build -t würde das Image lokal abspeichern. Da ich es jedoch nachher noch auf mein Dockerhub pushen möchte habe ich noch mein Username von Dockerhub und den namen der Webseite festgelegt. Der Punkt am Schluss bezieht sich auf das Dokerfile in der Directory.
+
+Nun ist das Image lokal verfügbar, und man kann bereits mit dem einen Container erstellen. Jedoch möchte ich, dass ich das von jedem Computer aus machen kann. Also pushe ich das noch von meinem Dockerhub Account.
+
+Der Command dazu wäre:
+> Docker push seanm300/nginx-website-m300
+
+![](/Images/docker/push-docker-image.JPG)
+
+Wichtig: Man muss sich natürlich zuerst noch authentifizieren. Hierzu einfach folgenden Command eingeben:
+> Docker login
+
+Danach kann man sich auf Dockerhub mit Username und Passwort einloggen.
+
+![](/Images/docker/dockerhub.JPG)
+
+## Testprotokoll
+| Testfall                      | Check          |
+| --------                      | -------------- |
+| Container wird angezeigt      | positiv        |
+| Webseite erreichbar           | positiv        |
+| Applikation erreichbar        | positiv        |
+| Ports sind nicht besetzt      | positiv        |
+| Image funktioniert            | positiv        |
+| Image Dockerhub erreichbar    | positiv        |
+
+
+Als nächstes werde ich meine Container mit Sicherheitselementen beschmücken.
+
+## Docker Projekt Sicherheit
+
+
+
+## Docker Projekt 
+
+## Reflexion
+
+## Wissenszuwachs

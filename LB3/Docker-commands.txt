@@ -1,0 +1,18 @@
+Docker Commands
+***************
+docker container run -d -p 80:80 --name nginx-server nginx
+#ngnix find on local ? go to dockerhub
+
+docker ps --> zeigt aktuelle container an
+
+docker container ls -a --> zeigt alle container an (auch wenn sie nicht laufen)
+
+docker container stop [ID] --> stoppot container
+
+docker stop $(docker ps -aq) --> stoppt alle container
+
+docker container exec -it "name" bash --> Im Container drin
+
+docker image build -t seanm300/nginx-website-m300 .
+
+docker container run -d -p 8082:80 seanm300/nginx-website-m300 --> Container mit eigenem Image erstellt

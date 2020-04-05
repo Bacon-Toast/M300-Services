@@ -435,11 +435,55 @@ Danach kann man sich auf Dockerhub mit Username und Passwort einloggen.
 Als nächstes werde ich meine Container mit Sicherheitselementen beschmücken.
 
 ## Docker Projekt Sicherheit
+Im letzten Projekt habe ich meine Container erstellt und verwaltet. Nun geht es darum diese Container abzusichern. Es ist wichtig, dass Logging und Mitteilungen aktiviert sind. Das System muss dem Administrator behilflich sein. Im Ernstfall müssen Warnungen gesendet werden.
 
+### Meldungen an den Admin
+Eine gute Monitoring-Lösung sollte auf einen Blick den Zustand des Systems zeigen und rechtzeitig warnen, wenn Ressourcen knapp werden.
+Docker Tools cAdvisor von Google ist das am häufigsten eingesetzte Monitoring-Tool für Docker.
 
+Dieses Programm ist als Container verfügbar und man kann darauf zugreifen. Der folgende Command muss dazu aktiviert werden:
+>docker run -d --name cadvisor -v /:/rootfs:ro -v /var/run:/var/run:rw -v /sys:/sys:ro -v /var/lib/docker/:/var/lib/docker:ro -p 8080:8080 google/cadvisor:latest
 
-## Docker Projekt 
+### Weitere Sicherheitsaspekte
+Ich habe folgende weitere Sicherheitsaspekte für meine Container realisiert:
 
-## Reflexion
+#### Speicher
+Wenn man den Speicher schützt, kann man die Chancen von DDos Attacken minimieren. Dies ist wichtig, da der Speicher nicht "aufgefressen" werden darf. Hier wäre der Command dazu:
+
+> docker run -m 128m --memory-swap 128m amouat/stress stress --vm 1 --vm-bytes 127m -t 5s
+
+![](/Images/docker/RAM-protection.JPG)
+
+#### Neustarts begrenzen
+Ein Neustart verhindert Zeitverluste und Ressorcenverluste von einem sterbenden Container. Auch hier kann eine DDos Attacke verhindert werden. Der Command dazu wäre:
+
+> docker run -d --restart=on-failure:10 my-flaky-image
+
+![](/Images/docker/Restart-protection.JPG)
+
+#### Ressourcenbeschränken
+Der Kernel definiert Ressourcenbeschränkungen, die für Prozesse gesetzt werden können. Diese lassen sich auch auf Docker-Container anwenden. Hierzu wäre der Command:
+
+> docker run --ulimit cpu=12:14 amouat/stress stress --cpu 1
+
+![](/Images/docker/Ressource-protection.JPG)
+
+#### Capabilities einschränken 
+Der Linux-Kernel definiert eine Reihe von Berechtigungen, welche Prozessen zugewiesen werden können, um ihnen einen erweiterten Zugriff auf das System zu gestatten.
+
+Die Capabilities decken einen grossen Funktionsbereich ab, vom Ändern der Systemzeit bis hin zum Öffnen von Netzwerk-Sockets. Der Command dazu ist:
+
+> docker run --cap-drop all --cap-add CHOWN ubuntu chown 100 /tmp
+ 
+![](/Images/docker/Capabilities-protection.JPG)
+
+## Docker Projekt Node & Mongo DB
+Für mein letztes Projekt habe ich zwei Dockercontainer miteinander verbunden. Eine App erstellt eine Einkaufsliste. Die Elemente werden in einer Datenbank abgespeichert. Hierzu habe ich Node und Mongo DB verwendet.
 
 ## Wissenszuwachs
+In den letzten Jahren habe ich stets mit VMs gearbeitet. Container waren mir nicht bekannt. Ich habe die Services immer installieren müssen und konfigurieren müssen. Mit Docker erspart man sich da viel Arbeit. 
+
+Ich habe mit intensiv mit Docker befasst und viele nützliche Dinge kennengelernt, welche mir auf meinem weiteren Weg nützlich sein werden.
+
+## Reflexion
+In dieser zweiten Arbeit von diesem Modul habe ich einen guten Einblick in die Welt der Container erhalten. Ich weiss jetzt wie man mit Docker sehr schnell Services zum laufen bringt und diese auch verwalten kann. Ich habe sehr viel Freude an diesem Bereich erhalten und kann mir vorstellen in Zukunft damit zu arbeiten.
